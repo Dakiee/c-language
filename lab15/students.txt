@@ -1,0 +1,31 @@
+import acm.program.*;
+import acm.util.*;
+import acm.graphics.*;
+import java.awt.event.*;
+public class Daalgavar13 extends GraphicsProgram
+{private RandomGenerator rgen = RandomGenerator.getInstance();
+public void init(){setSize(500, 500);
+addMouseListeners();
+addKeyListeners();
+}public void keyTyped(KeyEvent key)
+{if(key.getKeyChar() == 'r')
+{double w = rgen.nextDouble(10, getWidth()/3);
+double h = rgen.nextDouble(10, getHeight()/3);
+double x = rgen.nextDouble(0, getWidth() - w);
+double y = rgen.nextDouble(0, getHeight() - h);
+GRect rect = new GRect(x, y, w, h);rect.setFilled(true);
+rect.setColor(rgen.nextColor());add(rect);} 
+else if(key.getKeyChar() == 'c')
+{double w = rgen.nextDouble(10, getWidth()/3);
+double h = rgen.nextDouble(10, getHeight()/3);
+double x = rgen.nextDouble(0, getWidth() - w);
+double y = rgen.nextDouble(0, getHeight() - h);
+GOval oval = new GOval(x, y, w, h);
+oval.setFilled(true);
+oval.setColor(rgen.nextColor());
+add(oval);
+}else if(key.getKeyChar() == 's')
+{double w = rgen.nextDouble(10, getWidth() / 3);
+GStar star = new GStar(w);star.setFilled(true);
+star.setColor(rgen.nextColor());
+double x = rgen.nextDouble(w/2, getWidth() - w);double y = rgen.nextDouble(w/2, getHeight() - w);
